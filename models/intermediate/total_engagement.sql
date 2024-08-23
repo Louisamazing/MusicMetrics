@@ -1,0 +1,15 @@
+SELECT
+    ARTIST,
+    SUM(SPOTIFY_STREAMS) AS total_spotify_streams,
+    SUM(YOU_TUBE_VIEWS) AS total_youtube_views,
+    SUM(TIK_TOK_VIEWS) AS total_tiktok_views,
+    SUM(PANDORA_STREAMS) AS total_pandora_streams,
+    SUM(SPOTIFY_STREAMS + YOU_TUBE_VIEWS + TIK_TOK_VIEWS + PANDORA_STREAMS) AS total_engagement
+FROM {{ source('raw', 'MUSIC_TRACK_METRICS') }}
+WHERE
+    SPOTIFY_STREAMS IS NOT NULL
+    AND YOU_TUBE_VIEWS IS NOT NULL
+    AND TIK_TOK_VIEWS IS NOT NULL
+    AND PANDORA_STREAMS IS NOT NULL
+GROUP BY ARTIST
+ORDER BY total_engagement DESC
