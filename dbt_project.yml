@@ -40,3 +40,5 @@ models:
       +materialized: table
       top_artists_tiktok_pandora:
         +materialized: table
+        artist_popularity_across_platforms:
+          +materialized: table
