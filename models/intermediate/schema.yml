@@ -2,10 +2,158 @@ version: 2
 
 models:
   - name: top_artists_spotify_youtube
-    description: "Top artists based on Spotify streams and YouTube views"
+    description: "Aggregates total streams and playlist reach for artists on Spotify and YouTube."
     columns:
       - name: ARTIST
-        description: "Name of the artist"
+        description: "Name of the artist."
         tests:
           - not_null
           - unique
+      - name: spotify_streams
+        description: "Total number of streams on Spotify for the artist."
+        tests:
+          - not_null
+      - name: spotify_playlist_reach
+        description: "Total reach of playlists on Spotify for the artist."
+        tests:
+          - not_null
+      - name: youtube_views
+        description: "Total number of views on YouTube for the artist."
+        tests:
+          - not_null
+      - name: youtube_playlist_reach
+        description: "Total reach of playlists on YouTube for the artist."
+        tests:
+          - not_null
+
+  - name: top_artists_tiktok_pandora
+    description: "Aggregates total views and interactions for artists on TikTok and Pandora."
+    columns:
+      - name: ARTIST
+        description: "Name of the artist."
+        tests:
+          - not_null
+          - unique
+      - name: tiktok_views
+        description: "Total number of views on TikTok for the artist."
+        tests:
+          - not_null
+      - name: tiktok_posts
+        description: "Total number of posts on TikTok for the artist."
+        tests:
+          - not_null
+      - name: tiktok_likes
+        description: "Total number of likes on TikTok for the artist."
+        tests:
+          - not_null
+      - name: pandora_streams
+        description: "Total number of streams on Pandora for the artist."
+        tests:
+          - not_null
+      - name: pandora_track_stations
+        description: "Total number of track stations on Pandora for the artist."
+        tests:
+          - not_null
+
+  - name: artist_popularity_across_platforms
+    description: "Aggregates artist metrics across all platforms for a comprehensive comparison."
+    columns:
+      - name: ARTIST
+        description: "Name of the artist."
+        tests:
+          - not_null
+          - unique
+      - name: spotify_streams
+        description: "Total number of streams on Spotify for the artist."
+        tests:
+          - not_null
+      - name: youtube_views
+        description: "Total number of views on YouTube for the artist."
+        tests:
+          - not_null
+      - name: tiktok_views
+        description: "Total number of views on TikTok for the artist."
+        tests:
+          - not_null
+      - name: pandora_streams
+        description: "Total number of streams on Pandora for the artist."
+        tests:
+          - not_null
+
+  - name: artist_popularity_trends
+    description: "Analyzes artist popularity trends over time."
+    columns:
+      - name: ARTIST
+        description: "Name of the artist."
+        tests:
+          - not_null
+      - name: RELEASE_DATE
+        description: "Release date of the track."
+        tests:
+          - not_null
+      - name: spotify_streams
+        description: "Total number of streams on Spotify for the artist on the release date."
+        tests:
+          - not_null
+      - name: youtube_views
+        description: "Total number of views on YouTube for the artist on the release date."
+        tests:
+          - not_null
+      - name: tiktok_views
+        description: "Total number of views on TikTok for the artist on the release date."
+        tests:
+          - not_null
+      - name: pandora_streams
+        description: "Total number of streams on Pandora for the artist on the release date."
+        tests:
+          - not_null
+
+  - name: platform_metrics_correlation
+    description: "Examines the correlation between metrics across different platforms."
+    columns:
+      - name: ARTIST
+        description: "Name of the artist."
+        tests:
+          - not_null
+      - name: spotify_streams
+        description: "Total number of streams on Spotify for the artist."
+        tests:
+          - not_null
+      - name: youtube_views
+        description: "Total number of views on YouTube for the artist."
+        tests:
+          - not_null
+      - name: tiktok_views
+        description: "Total number of views on TikTok for the artist."
+        tests:
+          - not_null
+      - name: pandora_streams
+        description: "Total number of streams on Pandora for the artist."
+        tests:
+          - not_null
+
+  - name: artist_popularity_score
+    description: "Calculates a composite popularity score for artists based on their performance across platforms."
+    columns:
+      - name: ARTIST
+        description: "Name of the artist."
+        tests:
+          - not_null
+          - unique
+      - name: popularity_score
+        description: "Composite score for the artist based on their performance across platforms."
+        tests:
+          - not_null
+
+  - name: highest_engagement_artists
+    description: "Identifies artists with the highest total engagement across all platforms."
+    columns:
+      - name: ARTIST
+        description: "Name of the artist."
+        tests:
+          - not_null
+          - unique
+      - name: total_engagement
+        description: "Total engagement score for the artist across all platforms."
+        tests:
+          - not_null

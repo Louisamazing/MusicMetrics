@@ -38,3 +38,5 @@ models:
     # Applies to all files under models/example/
     top_artists_spotify_youtube:
       +materialized: table
+      top_artists_tiktok_pandora:
+        +materialized: table
