@@ -42,3 +42,6 @@ models:
         +materialized: table
         artist_popularity_across_platforms:
           +materialized: table
+          artist_popularity_trends.sql:
+            +materialized: table
+            
