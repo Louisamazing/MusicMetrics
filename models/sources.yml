@@ -1,0 +1,72 @@
+# models/sources.yml
+
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data source for music metrics"
+    schema: MUSIC_2024
+    tables:
+      - name: MUSIC_TRACK_METRICS
+        description: "Table containing music track metrics data"
+        columns:
+          - name: _ROW
+            description: "Unique identifier for each row"
+          - name: _FIVETRAN_SYNCED
+            description: "Timestamp of data synchronization"
+          - name: ARTIST
+            description: "Name of the artist"
+          - name: PANDORA_TRACK_STATIONS
+            description: "Number of Pandora track stations"
+          - name: ALBUM_NAME
+            description: "Name of the album"
+          - name: APPLE_MUSIC_PLAYLIST_COUNT
+            description: "Number of Apple Music playlists the track is included in"
+          - name: EXPLICIT_TRACK
+            description: "Indicates if the track is explicit"
+          - name: SPOTIFY_PLAYLIST_COUNT
+            description: "Number of Spotify playlists the track is included in"
+          - name: TIK_TOK_VIEWS
+            description: "Number of TikTok views"
+          - name: DEEZER_PLAYLIST_REACH
+            description: "Reach of the track on Deezer playlists"
+          - name: SIRIUS_XM_SPINS
+            description: "Number of Sirius XM spins"
+          - name: SOUNDCLOUD_STREAMS
+            description: "Number of SoundCloud streams"
+          - name: DEEZER_PLAYLIST_COUNT
+            description: "Number of Deezer playlists the track is included in"
+          - name: SPOTIFY_STREAMS
+            description: "Number of Spotify streams"
+          - name: YOU_TUBE_VIEWS
+            description: "Number of YouTube views"
+          - name: TIK_TOK_POSTS
+            description: "Number of TikTok posts"
+          - name: TIK_TOK_LIKES
+            description: "Number of TikTok likes"
+          - name: PANDORA_STREAMS
+            description: "Number of Pandora streams"
+          - name: SHAZAM_COUNTS
+            description: "Number of Shazam counts"
+          - name: YOU_TUBE_LIKES
+            description: "Number of YouTube likes"
+          - name: AMAZON_PLAYLIST_COUNT
+            description: "Number of Amazon playlists the track is included in"
+          - name: TRACK_SCORE
+            description: "Score assigned to the track"
+          - name: SPOTIFY_POPULARITY
+            description: "Popularity score on Spotify"
+          - name: YOU_TUBE_PLAYLIST_REACH
+            description: "Reach of the track on YouTube playlists"
+          - name: SPOTIFY_PLAYLIST_REACH
+            description: "Reach of the track on Spotify playlists"
+          - name: ISRC
+            description: "International Standard Recording Code"
+          - name: ALL_TIME_RANK
+            description: "All-time rank of the track"
+          - name: TRACK
+            description: "Name of the track"
+          - name: RELEASE_DATE
+            description: "Release date of the track"
+          - name: AIR_PLAY_SPINS
+            description: "Number of airplay spins"

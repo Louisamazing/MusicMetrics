@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: top_artists_spotify_youtube
+    description: "Top artists based on Spotify streams and YouTube views"
+    columns:
+      - name: ARTIST
+        description: "Name of the artist"
+        tests:
+          - not_null
+          - unique
